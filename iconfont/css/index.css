@@ -1,0 +1,28 @@
+.container {
+    margin: 1.5rem;
+}
+h1 {
+    margin: 15px 0;
+}
+li {
+    float: left;
+    width: 25%;
+    margin-bottom: 20px;
+}
+li span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.iconfont {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+}
+.iconfont img {
+    display: block;
+    width: 100%;
+}
+.title {
+    font-size: 24px;
+    margin-left: 15px;
+}

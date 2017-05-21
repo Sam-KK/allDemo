@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+
+#dbRoWrap{position:relative;/*width:auto;*/height:440px; width: 1000px; margin: auto;}
+#dbRoWrap div.fzin{position:relative; float:left; display:inline; margin:0 0 0 20px;}
+#dbRoWrap div.fzin2{margin-left: 10px;}
+#dbRoWrap img{position:absolute;width:179px;height:440px;border:0}

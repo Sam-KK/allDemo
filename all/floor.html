@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>楼层滚动</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style type="text/css">
+.elevator{width:30px;overflow:hidden;position: fixed;top: 100px;display: none;}
+.elevator ul{overflow:hidden;background-color:rgba(255,255,255,.8);}
+.elevator ul li {width: 30px;height: 30px;line-height: 30px;text-align: center;overflow: hidden;margin-top: -1px;cursor: pointer;}
+.elevator ul li a {display: block;width: 30px;height: 30px;margin: 0 auto;color: #625351;font-size: 14px;background: url(images/floor.png) 0 0 no-repeat;}
+.elevator ul li a.etitle {display: none;width: 30px;height: 30px;color: #fff;font-size: 12px;}
+.elevator ul li a:hover {color: #fff;text-decoration: none;background: #c81623;}
+.elevator ul li:hover a,.elevator li:hover a {display: none;}
+.elevator ul li:hover .etitle {display: block;color: #fff;}
+.elevator ul li.current a {display: none;}
+.elevator ul li.current .etitle {display: block; color: #c81623;}
+.elevator ul li.current .etitle:hover{color:#fff}
+.w {width: 1200px; margin: 0 auto;}
+.floor .mt { border-bottom: 1px solid #c81623; overflow: visible; _zoom: 1; position: relative; }
+.floor h2 { position: relative; padding-left: 40px; color: #333;}
+.floor h2:before {content: "";position: absolute;top: 2px;left: 0px;width: 31px;height: 25px;background: url(images/product_home_1.0.0.png) no-repeat 0 0;}
+.floor h2 i {position: absolute;top: 4px; left: 0; width: 21px;height: 25px;line-height: 25px;color: #fff;font-size: 13px; padding-right: 10px;text-align: center;overflow: hidden;}
+.floor .mc {border: 1px solid #ccc;}
+.floor .mc h1 {font-size: 40px; text-align: center;}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-button:vertical{display:none}
+::-webkit-scrollbar-track:vertical{background-color:#000}
+::-webkit-scrollbar-track-piece{background:#FFF}
+::-webkit-scrollbar-thumb:vertical{background-color:#8E8E8E;border-radius:5px}
+::-webkit-scrollbar-thumb:vertical:hover{background-color:#3B3B3B}
+::-webkit-scrollbar-corner:vertical{background-color:#535353}
+::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00}
+</style>
+<body>
+    <div id="elevator" class="elevator">
+        <ul>
+            <li class="handler"><a href="javascript:;">1F</a><a class="etitle" href="javascript:;">服装</a></li>
+            <li class="handler"><a href="javascript:;">2F</a><a class="etitle" href="javascript:;">美妆</a></li>
+            <li class="handler"><a href="javascript:;">3F</a><a class="etitle" href="javascript:;">手机</a></li>
+            <li class="handler"><a href="javascript:;">4F</a><a class="etitle" href="javascript:;">家电</a></li>
+            <li class="handler"><a href="javascript:;">5F</a><a class="etitle" href="javascript:;">数码</a></li>
+            <li class="handler"><a href="javascript:;">6F</a><a class="etitle" href="javascript:;">运动</a></li>
+        </ul>
+    </div>
+    <div class="w top1">
+        <img src="images/f01.jpg" width="100%" alt="">
+        <img src="images/f02.jpg" width="100%" alt="">
+    </div>
+    <div class="floor w" id="lazy-clothes">
+        <div id="clothes">
+            <div class="mt">
+                <h2><i>1F</i>服装鞋包</h2>
+            </div>
+            <div class="mc">
+                <img src="images/floor01.jpg" width="100%" alt="">
+                <img src="images/floor01.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="floor w" id="lazy-clothes">
+        <div id="clothes">
+            <div class="mt">
+                <h2><i>2F</i>个护美妆</h2>
+            </div>
+            <div class="mc">
+                <img src="images/floor02.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="floor w" id="lazy-clothes">
+        <div id="clothes">
+            <div class="mt">
+                <h2><i>3F</i>手机通讯</h2>
+            </div>
+            <div class="mc">
+                <img src="images/floor03.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="floor w" id="lazy-clothes">
+        <div id="clothes">
+            <div class="mt">
+                <h2><i>4F</i>家用电器</h2>
+            </div>
+            <div class="mc">
+                <img src="images/floor04.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="floor w" id="lazy-clothes">
+        <div id="clothes">
+            <div class="mt">
+                <h2><i>5F</i>电脑数码</h2>
+            </div>
+            <div class="mc">
+                <img src="images/floor05.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="floor w" id="lazy-clothes">
+        <div id="clothes">
+            <div class="mt">
+                <h2><i>6F</i>运动健身</h2>
+            </div>
+            <div class="mc">
+                <img src="images/floor06.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <img src="images/f02.jpg" width="100%" alt="">
+    </footer>
+</body>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+         $("#elevator li").on("click",function(){
+            $(this).addClass("current").siblings().removeClass("current");
+            var index = $(this).index();
+            var floor_top = $(".floor").eq(index).offset().top;
+            $("html,body").animate({
+                scrollTop: floor_top
+            },500);
+        });
+
+        var d_width = $(document).width();
+        var w_width = $(".w").width();
+        var p_width = (d_width - w_width) / 2;
+        var l_width = w_width + p_width;
+        $(".elevator").css({
+            right: l_width
+        });
+
+        var s_0 = $(".floor").eq(0).offset().top - ($(".floor").eq(0).height())/2;
+        var s_1 = $(".floor").eq(1).offset().top - ($(".floor").eq(0).height())/2;
+        var s_2 = $(".floor").eq(2).offset().top - ($(".floor").eq(1).height())/2;
+        var s_3 = $(".floor").eq(3).offset().top - ($(".floor").eq(2).height())/2;
+        var s_4 = $(".floor").eq(4).offset().top - ($(".floor").eq(3).height())/2;
+        var s_5 = $(".floor").eq(5).offset().top - ($(".floor").eq(4).height())/2;
+        var s_6 = $("footer").offset().top - ($(".floor").eq(5).height())/2;
+        console.log(s_6);
+
+        $(window).scroll(function(){
+            // 获得窗口滚动上去的距离
+            var window_scroll_top = $(document).scrollTop();
+            document.title = window_scroll_top;
+            if(window_scroll_top > s_0){
+                $("#elevator").show();
+            }
+            if(s_0 < window_scroll_top && window_scroll_top < s_1){
+                $("#elevator li").eq(0).addClass("current").siblings().removeClass("current");
+            }else if(window_scroll_top < s_2) {
+                $("#elevator li").eq(1).addClass("current").siblings().removeClass("current");
+            }else if(window_scroll_top < s_3) {
+                $("#elevator li").eq(2).addClass("current").siblings().removeClass("current");
+            }else if(window_scroll_top < s_4) {
+                $("#elevator li").eq(3).addClass("current").siblings().removeClass("current");
+            }else if(window_scroll_top < s_5) {
+                $("#elevator li").eq(4).addClass("current").siblings().removeClass("current");
+            }else if(window_scroll_top < s_6) {
+                $("#elevator li").eq(5).addClass("current").siblings().removeClass("current");
+            }
+            if(window_scroll_top > s_6 || window_scroll_top < s_0) {
+                $("#elevator").hide();
+            }
+        });
+    });
+</script>
+</html>

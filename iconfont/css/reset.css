@@ -1,0 +1,71 @@
+﻿@charset "utf-8";
+/* CSS Document */
+html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100% !important;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,tr,th,td { margin:0; padding:0; }
+body {
+    background:#fff;
+    color:#555;
+    line-height: 1;
+    overflow: hidden;
+    font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,arial,Verdana,sans-serif,"WenQuanYi Micro Hei" !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* H5 */
+header, section, footer, aside, nav, main, article, figure {display: block; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal;}
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a {text-decoration:none !important; }
+a:hover { text-decoration:none !important; }
+img { border:none; display: block;}
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,arial,Verdana,sans-serif,"WenQuanYi Micro Hei" !important; }
+table { border-collapse: collapse;}
+em, i {font-style: normal;}
+label {font-weight: normal !important;}
+/* 清浮动 */
+.clearFix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearFix { *zoom:1;}
+
+/* 公用样式 */
+.oh {overflow: hidden;}
+
+.bg_fff {background: #fff;}
+
+.fl {float: left;}
+.fr {float: right;}
+
+.tc {text-align: center !important;}
+.tl {text-align: left !important;}
+.tr {text-align: right !important;}
+
+/*内边距*/
+.p0 {
+    padding: 0 !important;
+}
+.p_l0 {
+    padding-left: 0 !important;
+}
+.p_r0 {
+    padding-right: 0 !important;
+}
+/*外边距*/
+.m_t10 {
+    margin-top: 10px;
+}
+.m_r10 {
+    margin-right: 10px;
+}
+.m_b10 {
+    margin-bottom: 10px;
+}
+.m_l10 {
+    margin-left: 10px;
+}

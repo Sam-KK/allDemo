@@ -1,0 +1,36 @@
+﻿@charset "utf-8";
+/* CSS Document */
+html {-webkit-tap-highlight-color:transparent;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,tr,th,td { margin:0; padding:0; }
+body {
+	background:#fff;
+	color:#555;
+	font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei" !important;
+
+    /*
+    windows 7系统：微软雅黑 Arial；
+    windows XP及以下：新宋体，宋体，Arial
+    MAC默认字体：Helvetica Neue和Helvetica Hiragino Sans GB。
+    */
+}
+/* H5 */
+header, section, footer, aside, nav, main, article, figure {display: block; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal;}
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+a:hover { text-decoration:none !important;}
+img { border:none; display: block;}
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+em, i {font-style: normal;}
+/* 清浮动 */
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }
+
+/* 公用样式 */
+.fl {float: left;}
+.fr {float: right;}
+
+.tr {text-align: right;}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360气泡导航条</title>
+</head>
+<style type="text/css">
+    * {margin: 0; padding: 0; list-style: none;}
+    nav {width: 970px; height: 60px; margin: 0 auto;background: url(bg.gif);}
+    .logo {float: left; margin: 6px 0 0 13px;}
+    .pri-nav {float: right; position: relative; margin-top: 16px;}
+    .pri-nav .arrow{width:69px;height:31px;background:url(nav_bg.png) no-repeat;position:absolute;left:8px;top:0;z-index:9;}
+    .pri-nav li {float: left;}
+    .pri-nav li a {width: 69px; height: 31px; font-size: 13px; color: #444; line-height: 28px; display: block; position: relative; padding: 0 8px; text-align: center; text-decoration: none; z-index: 99;font-family: "微软雅黑";}
+    .pri-nav li a:hover {color: #fff;text-decoration: none;}
+    .pri-nav .cur a{color:#fff;}
+</style>
+<body>
+    <nav>
+        <a href=""><img src="logo.png" height="46" width="116" alt="360安全卫士" class="logo"></a>
+        <ul class="pri-nav">
+            <li class="">
+                <a href="#">10.2正式版</a>
+            </li>
+            <li class="">
+                <a href="#">功能介绍</a>
+            </li>
+            <li class="cur">
+                <a href="#">更新日志</a>
+            </li>
+            <li class="">
+                <a href="#" target="_blank">在线求助</a>
+            </li>
+            <li class="">
+                <a href="3" target="_blank">360首页&gt;</a>
+            </li>
+            <li class="arrow" style="left: 177px;"></li>
+        </ul>
+    </nav>
+</body>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+/* 导航栏效果 */
+$(function(){
+    var $nav = $(".pri-nav"),
+        $lis = $nav.children("li"),
+        $arrow = $lis.filter(".arrow"), //遍历，filter() 方法将匹配元素集合缩减为匹配指定选择器的元素。
+        arrowDefLeft = $arrow.css("left"),
+        speed = 150,
+        defLiIndex = $lis.index($lis.filter(".cur"));
+
+    $lis.hover(function(){
+        var liIndex = $lis.index(this);
+        $arrow.stop(true, true).animate({left:(8+liIndex*85)+"px"}, speed);
+        $lis.removeClass("cur").eq(liIndex).addClass("cur");
+    });
+
+    $nav.mouseleave(function(){
+        $arrow.stop(true, true).animate({left:arrowDefLeft}, speed);
+        $lis.removeClass("cur").eq(defLiIndex).addClass("cur");
+    });
+});
+</script>
+</html>

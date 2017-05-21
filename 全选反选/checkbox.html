@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+</head>
+<style type="text/css">
+    .box {margin-top: 15px;}
+</style>
+<body>
+    <div class="button">
+        <input type="button" value="全选" id="selectAll" />
+        <input type="button" value="全不选" id="unSelect" />
+        <input type="button" value="反选" id="reverse" />
+    </div>
+    <div class="box">
+        <input type="checkbox" value="歌曲1" />歌曲1<br />
+        <input type="checkbox" value="歌曲2" />歌曲2<br />
+        <input type="checkbox" value="歌曲3" />歌曲3<br />
+        <input type="checkbox" value="歌曲4" />歌曲4<br />
+        <input type="checkbox" value="歌曲5" />歌曲5<br />
+        <input type="checkbox" value="歌曲6" />歌曲6
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //全选
+        $("#selectAll").click(function(){
+            $(".box :checkbox").prop("checked",true);
+        });
+        //全不选
+        $("#unSelect").click(function(){
+            $(".box :checkbox").prop("checked",false);
+        });
+        //反选
+        $("#reverse").click(function(){
+            $(".box :checkbox").each(function(){
+                $(this).prop("checked", !$(this).prop("checked"));
+            });
+        });
+    });
+</script>
+</html>

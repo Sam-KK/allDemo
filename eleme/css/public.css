@@ -1,0 +1,28 @@
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+/*header*/
+.header {
+    color: #fff;
+    font-size: 0.45rem;
+    height: 1.17333rem;
+    line-height: 1.17333rem;
+    padding: 0 0.2rem;
+    background: #3199e8;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+}
+.go-back {
+    font-size: 0.8rem;
+}
+.eleme-user-info a {
+    font-size: 0.3733rem;
+    color: #fff;
+}

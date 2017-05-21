@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灵析登录</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lxlogin.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- logo -->
+        <div class="logo">
+            <a href="">
+                <img src="images/lingxi_logo.png" alt="灵析">
+            </a>
+        </div>
+        <!-- logo -->
+
+        <!-- content -->
+        <div class="content">
+            <div class="title">
+                <h3>Sam</h3>
+            </div>
+            <!-- Login Form -->
+            <form class="form_content form-horizontal" id="form-login" action="">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#common_login" data-toggle="tab">账号登录</a>
+                    </li>
+                    <li>
+                        <a href="#thirdparty_login" data-toggle="tab">第三方登录</a>
+                    </li>
+                </ul>
+
+                <div class="error"></div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="common_login">
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="text" id="login-email" name="email" value="" class="form-control input-lg" placeholder="邮箱或绑定的手机">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="password" id="login-password" name="password" value="" class="form-control input-lg" placeholder="6-16位密码，区分大小写，不能用空格">
+                            </div>
+                            <div>
+                                <label class="checkbox-inline pull-left muted" for="auto_login">
+                                    <input type="checkbox" name="auto_login" id="auto_login" checked="checked">下次自动登录
+                                </label>
+                                <div class="pull-right">
+                                    <a class="text-muted" href="#">忘记密码？</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="submit_form_wrapper">
+                            <input type="button" id="loginbtn" class="submit_form btn" value="登录" />
+                        </div>
+                        <div class="pull-right" >
+                            还没有账号？<a class="text-muted" href="#">马上注册</a>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div  class="tab-pane" id="thirdparty_login">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <table class="col-xs-12">
+                                    <tr>
+                                        <td>
+                                            <a onclick="" href="/oauth/wechat" class="colorTipContainer black" title="微信登录">
+                                                <img src="images/login_weixin.png" />
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a onclick="" href="/oauth/qq" class="colorTipContainer black" title="QQ 登录">
+                                                <img src="images/login_qq.png" />
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a onclick="" href="/oauth/weibo" class="colorTipContainer black" title="微博登录">
+                                                <img src="images/login_weibo.png" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-xs-3"><hr></div>
+                            <div class="col-xs-6 text-muted text-center">使用社交帐号登录</div>
+                            <div class="col-xs-3"><hr></div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </form>
+            <!-- Login Form -->
+        </div>
+        <!-- content -->
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function getLength (str) {
+        return str.replace(/[^\x00-xff]/g,'xx').length;
+    }
+    //判断是否相同数字或字母
+    function findStr(str,n) {
+        var tmp = 0;
+        for (var i = 0; i < str.length; i++) {
+            if (str.charAt(i) == n) {
+                tmp ++;
+            }
+        }
+        return tmp;
+    }
+    $(function(){
+        //验证
+        var username = $("#login-email");
+        var pw = $("login-password");
+
+        //1、数字、字母（不区分大小写）、汉子、下划线
+        //2、5-25个字符、推荐使用中文.
+        //var re = /[^\w\u4e00-\u9fa5]/g;
+        //var re = /[@#\$%\^&\*]+/g;
+        $("#login-email").focus(function(){
+            $(this).addClass("error-input");
+            $(".error").addClass("is-visible").html("数字、字母（不区分大小写）、汉子、下划线");
+        });
+        $("#login-email").blur(function(){
+            //含有非法字符
+            name_length = getLength(this.value);
+            //var re = /[^\w\u4e00-\u9fa5]/g;
+            var pattern = new RegExp("[~'!@#$%^&*()-+_=:]");
+            // if (!pattern.test($("#login-email").val())) {
+            //     $(".error").addClass("is-visible").html("含有非法字符");
+            // }
+            //不能为空
+             if($("#login-email").val() == "") {
+                $(".error").addClass("is-visible").html("用户名不能为空");
+            }else if($("#login-email").val().length >= 25){
+                $(".error").addClass("is-visible").html("长度超过25个字符");
+            }else if($("#login-email").val().length < 6) {
+                $(".error").addClass("is-visible").html("长度少于6个字符");
+            }else {
+                $(".error").hide();
+            }
+        });
+
+        $("login-password").blur(function(){
+            var re_n = /[^\d]/g;  //不能全为数字
+            var re_t = /[^a-zA-Z]/g;
+            //不能为空
+            if (this.val() == "") {
+                $(".error").show().addClass("is-visible").html("密码不能为空");
+            }
+        });
+        //验证手机号是否存在
+        // function checkPhoneIsExist(){
+        //     var phone = $("#login-email").val();
+        //     var flag = true;
+        //     $.ajax({
+        //         url: "https://jf-test.infinitus.com.cn/mobile/login/public/weChatAjaxLogin",
+        //         data:{phone:phone},
+        //         dataType:"json",
+        //         type:"GET",
+        //         async:false,
+        //         success:function(data) {
+        //             var status = data.status;
+        //             if(status == "0"){
+        //                 flag = false;
+        //             }
+        //         }
+        //     });
+        //     return flag;
+        // }
+    });
+</script>
+</html>

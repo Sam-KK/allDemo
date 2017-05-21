@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性导航条</title>
+</head>
+<style type="text/css">
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,blockquote,pre,form,input,textarea,fieldset,table,th,td{margin:0;padding:0}body,button,input,select,textarea,h1,h2,h3,i{font:normal 12px/1em 'Microsoft YaHei'}
+body{min-width:960px}
+ul,li{list-style:none}
+a{text-decoration:none}
+.cls{zoom:1}
+.cls:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.link:hover{text-decoration:underline}
+.wrapper{width:960px;margin:0 auto}
+.wrapper h1 {float: left; padding: 6px 0 0 14px;}
+.wrapper h1 a{display:block;width:153px;height:0;padding-top:48px;overflow:hidden;background:url(logo01.png) no-repeat}
+.wrapper .nav{float:right;position:relative;margin-top:16px}
+.wrapper .nav li {padding: 8px 6px;margin: 0 10px;display: inline-block;}
+.wrapper .nav li a{color:#999}
+.wrapper .nav li.current{border-bottom:1px solid #63d029}.header .top .nav li.current a{color:#63d029}
+.wrapper .nav li.last{margin-right:0;padding-right:0}
+.wrapper .nav li.last:hover{text-decoration:underline}
+.wrapper .nav li.underscore{position:absolute;width:100%;left:0;bottom:0;margin:0;padding:0}
+.wrapper .nav li.underscore i{position:absolute;display:none;height:1px;bottom:0;background:#63d029;-webkit-transition:.5s;-moz-transition:.5s;-ms-transition:.5s;-o-transition:.5s;transition:.5s}
+</style>
+<body>
+    <div class="wrapper cls">
+        <h1><a class="logo" href="#">360杀毒</a></h1>
+        <ul class="nav cls">
+            <li>
+                <a href="index.html">首 页</a>
+            </li>
+            <li class="current" style="border-color: rgb(255, 255, 255);">
+                <a href="#">更新日志</a>
+            </li>
+            <li>
+                <a href="#">下载中心</a>
+            </li>
+            <li>
+                <a href="#" target="_blank">在线求助</a>
+            </li>
+            <li>
+                <a href="#">皮肤下载</a>
+            </li>
+            <li>
+                <a href="#">样本上报</a>
+            </li>
+            <li class="last">
+                <a href="#">360首页&gt;&gt;</a>
+            </li>
+            <li class="underscore"> <i style="width: 60px; left: 74px; display: inline;"></i>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var e=$(".nav"),
+    t=e.offset().left;
+    console.log(t);
+    $(window).on("resize",function(){
+        t=e.offset().left
+    });
+    var n=e.find("li.current"),
+    r={
+        width:n.innerWidth(),
+        left:n.offset().left-t
+    },
+        i=$(".nav .underscore i"),
+        s;
+        e.find("li:not(.underscore):not(.last)").mouseover(function(){
+            var e=$(this);
+            s=setTimeout(function(){
+                i.css({
+                    width:e.innerWidth(),
+                    left:e.offset().left-t
+                });
+            },100);
+        });
+        var o=function(){
+            clearTimeout(s),i.css(r);
+        };
+        e.mouseleave(o).find("li.last").mouseover(o),i.css(r).show(),n.css("border-color","#fff");
+    })
+</script>
+</html>

@@ -1,0 +1,72 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-12 14:25:40
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-13 15:44:42
+*/
+
+.block, .cities-wrapper {
+    margin-top: 0.3rem;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.geo-title {
+    margin: 0;
+    padding: 0.2rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.4rem;
+    color: #666;
+}
+.geo-title, .locate-city {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.geo-title-note {
+    font-size: 0.32rem;
+    color: #999;
+}
+.locate-city {
+    padding: 0.2rem;
+    font-size: 0.5rem;
+}
+.cities-wrapper {
+    position: relative;
+    border-bottom: none;
+}
+.geo-cities {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.geo-city, .city-hot {
+    width: 24%;
+    font-size: 0.43rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
+    -o-flex-grow: 1;
+    flex-grow: 1;
+}
+.city-hot {
+    color: #08c;
+}
+.geo-city {
+    color: #555;
+}

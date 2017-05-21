@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="">
+<!-- header -->
+<header class="header flex">
+    <div class="go-back">
+        <i class="icon-logo-eleme"></i>
+    </div>
+    <div class="header-title"></div>
+    <div class="eleme-user-info">
+        <a href="">登录 | 注册</a>
+    </div>
+</header>
+<!-- header of end -->
+
+<div class="block">
+    <div class="geo-title flex">
+        当前定位城市：<small class="geo-title-note">定位不准时，请在城市列表中选择</small>
+    </div>
+    <a href="" class="locate-city flex">
+        <span>上海</span>
+        <i class="iconfont icon-angle-right"></i>
+    </a>
+</div>
+
+<!--cities-wrapper-->
+<div class="cities-wrapper">
+    <div class="geo-title">热门城市</div>
+    <div class="geo-cities flex">
+        <a class="city-hot" ng-repeat="city in hotCities" ng-bind="city.name" href=""></a>
+    </div>
+</div>
+
+<div class="cities-wrapper" ng-repeat="(key, items) in cities">
+    <div class="geo-title">
+        <span ng-bind="key">{{ key }}</span>
+        <small class="geo-title-note ng-scope" ng-if="$first">(按字母排序)</small>
+    </div>
+    <div class="geo-cities flex">
+        <a class="geo-city" ng-repeat="city in items" ng-bind="city.name" href=""></a>
+    </div>
+</div>
+</body>
+</html>

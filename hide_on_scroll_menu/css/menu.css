@@ -1,0 +1,156 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\000036}}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000310}}
+a:hover {
+  color: #ffffff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000317}}
+#header-nav {
+  position: fixed;
+  top: 0;
+  display: block;
+  width: 100%;
+  background: black;
+  -webkit-transition: -webkit-transform 0.7s 0.3s ease;
+  -moz-transition: -moz-transform 0.7s 0.3s ease;
+  -ms-transition: -ms-transform 0.7s 0.3s ease;
+  transition: transform 0.7s .3s ease;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000335}}
+#header-nav.hide-nav-bar {
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+  -webkit-backface-visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000345}}
+a.menu-link {
+  float: right;
+  display: block;
+  padding: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000350}}
+nav[role=navigation] {
+  clear: right;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000358}}
+.js nav[role=navigation] {
+  overflow: hidden;
+  max-height: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000362}}
+nav[role=navigation].active {
+  max-height: 15em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000365}}
+nav[role=navigation] ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  padding: 0.7em 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000371}}
+nav[role=navigation] li a {
+  display: block;
+  padding: 0.8em;
+  font-size: 0.9em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000379}}
+.menu-link {
+  height: 30px;
+  width: 33px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000385}}
+.bar1,
+.bar2,
+.bar3 {
+  margin-top: 3px;
+  background: #999999;
+  width: 33px;
+  height: 4px;
+  position: absolute;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\0000397}}
+.bar2 {
+  margin-top: 13px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003100}}
+.bar3 {
+  margin-top: 23px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003108}}
+.brand {
+  float: left;
+  margin-left: 1em;
+  padding: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003112}}
+.brand h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+@media screen and (min-width: 48.25em) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003124}}
+  a.menu-link {
+    display: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003127}}
+  .js nav[role=navigation] {
+    max-height: none;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003130}}
+  nav[role=navigation] ul {
+    margin: 0 0 0 -0.25em;
+    border: 0;
+    float: right;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003136}}
+  nav[role=navigation] li {
+    display: inline-block;
+    margin: 0 0.25em;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003140}}
+  nav[role=navigation] li a {
+    border: 0;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003152}}
+.container {
+  max-width: 72em;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003157}}
+section {
+  margin-top: 4em;
+  padding: 1em;
+  color: #5c5c5c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003162}}
+section hr {
+  border-bottom: none;
+  color: #f2f2f2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Project\/myProject\/hide_on_scroll_menu\/css\/menu\.less}line{font-family:\00003168}}
+.info {
+  text-align: center;
+}

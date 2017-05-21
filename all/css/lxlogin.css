@@ -1,0 +1,148 @@
+body {
+    color: #333;
+    width: 100%;
+    height: 100%;
+    background: #F2F4F6;
+}
+@media (min-width: 1365px) {
+    body {
+        background: url(../images/lx_bg.jpg) center 70px no-repeat;
+    }
+}
+
+@media (min-width: 767px) {
+    body {
+        background: url(../images/lx_bg02.jpg) center 70px no-repeat;
+    }
+}
+
+.logo,.content,.title {
+    text-align: center;
+}
+.logo {
+    margin-top: 13px;
+}
+.logo img {
+    height: 40px;
+}
+.content {
+    width: 340px;
+    margin: 100px auto;
+    padding: 30px 40px;
+    float: right;
+    background: #f6f4f5;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.title {
+    margin-bottom: 20px;
+}
+.title h3 {
+    margin-top: 0;
+}
+
+form {
+    margin: 0 0 10px;
+}
+.nav-tabs {
+    color: #999;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.nav-tabs li {
+    width: 50%;
+    margin-bottom: 0;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    border-bottom: 2px solid #69b4d6;
+}
+.control-group, .form_content .submit_form_wrapper {
+    text-align: center;
+}
+.control-group {
+    position: relative;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.control-group .controls input {
+    border: none;
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+    height: 42px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+.control-group .checkbox-inline {
+    padding-top: 0;
+    color: #999;
+}
+.text-muted {
+    color: #999;
+}
+.submit_form_wrapper .submit_form {
+    width: 100%;
+    height: 42px;
+    padding: 5px;
+    background-color: #f58895;
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 3px;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none;
+}
+.submit_form_wrapper .submit_form:link,.submit_form_wrapper .submit_form:visited,.submit_form_wrapper .submit_form:active{
+    box-shadow: none;
+}
+.submit_form_wrapper .submit_form:hover{opacity:.9}
+#thirdparty_login table {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.colorTipContainer {
+    position: relative;
+    text-decoration: none!important;
+}
+.colorTipContainer img {
+    display: inline;
+}
+hr {
+    margin-top: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #fff;
+}
+.error {
+    color: #c33;
+    font-size: 12px;
+    opacity: 0;
+    text-align: left;
+    visibility: hidden;
+    -webkit-transform: translate(20px,0);
+    -ms-transform: translate(20px,0);
+    transform: translate(20px,0);
+    -webkit-transition: .25s ease-out;
+    transition: .25s ease-out;
+}
+.error.is-visible {
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "alpha(Opacity=100)";
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+}
+.error-input {
+    border: 1px solid #ff6711 !important;
+    webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}

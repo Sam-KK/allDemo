@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D旋转木马</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="box">
+    <div class="img"><img src="images/1.jpg" alt="" draggable="false"></div>
+    <div class="img"><img src="images/1.jpg" alt="" draggable="false"></div>
+    <div class="img"><img src="images/1.jpg" alt="" draggable="false"></div>
+    <div class="img"><img src="images/1.jpg" alt="" draggable="false"></div>
+    <div class="img"><img src="images/1.jpg" alt="" draggable="false"></div>
+    <div class="img"><img src="images/1.jpg" alt="" draggable="false"></div>
+</div>    
+</body>
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var data = {
+        c_x : 0,
+        c_y : 0,
+        n_x : 0,
+        n_y : 0,
+        o_x : 0,
+        o_y : 15
+    }
+    //window.on(touchEvents.touchstart) = function(event){
+    window.onmousedown = function(event){
+        //console.log(event);
+        data.c_x = event.pageX;
+        data.c_y = event.pageY;
+        window.addEventListener("mousemove", move); //绑定事件响应函数
+    }
+
+    window.onmouseup = function(){
+        data.o_x = data.n_x;
+        data.o_y = data.n_y;
+        window.removeEventListener("mousemove", move); //移除时间绑定函数 
+    }
+
+    function move(event){
+        var x = event.pageX;
+        var y = event.pageY;
+        data.n_x = data.o_x + (x - data.c_x) / 10;
+        data.n_y = data.o_y + (y - data.c_y) / 10;
+        //console.log(data);
+        var box = document.getElementsByClassName("box")[0];
+        box.style.transform = "rotateX("+-data.n_y+"deg) rotateY("+data.n_x+"deg)";
+    }
+});
+</script>
+</html>

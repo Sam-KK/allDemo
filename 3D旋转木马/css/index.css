@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #123456;
+    overflow: hidden;
+}
+.box {
+    position: relative;/*转换相对定位*/
+    width: 500px;
+    height: 333px;
+    -webkit-transform-style: preserve-3d;;
+     -moz-transform-style: preserve-3d;;
+     -ms-transform-style: preserve-3d;;
+     transform-style: preserve-3d;; /*告诉浏览器我们写的是3D效果*/
+    margin: 180px auto 0 auto;
+    -webkit-transform: rotateX(-15deg);
+    -moz-transform: rotateX(-15deg);
+    -ms-transform: rotateX(-15deg);
+    -o-transform: rotateX(-15deg);
+    transform: rotateX(-15deg); /*默认沿 X轴旋转-15度*/
+}
+.img {
+    position: absolute;
+    width: 500px;
+    height: 333px;
+    padding: 5px;
+    background: #fff;
+}
+.img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.img:nth-child(1) {
+    -webkit-transform: rotateY(0deg) translateZ(500px);
+       -moz-transform: rotateY(0deg) translateZ(500px);
+        -ms-transform: rotateY(0deg) translateZ(500px);
+         -o-transform: rotateY(0deg) translateZ(500px);
+            transform: rotateY(0deg) translateZ(500px);
+}
+.img:nth-child(2) {
+    -webkit-transform: rotateY(60deg) translateZ(500px);
+       -moz-transform: rotateY(60deg) translateZ(500px);
+        -ms-transform: rotateY(60deg) translateZ(500px);
+         -o-transform: rotateY(60deg) translateZ(500px);
+            transform: rotateY(60deg) translateZ(500px);
+}
+.img:nth-child(3) {
+    -webkit-transform: rotateY(120deg) translateZ(500px);
+       -moz-transform: rotateY(120deg) translateZ(500px);
+        -ms-transform: rotateY(120deg) translateZ(500px);
+         -o-transform: rotateY(120deg) translateZ(500px);
+            transform: rotateY(120deg) translateZ(500px);
+}
+.img:nth-child(4) {
+    -webkit-transform: rotateY(180deg) translateZ(500px);
+       -moz-transform: rotateY(180deg) translateZ(500px);
+        -ms-transform: rotateY(180deg) translateZ(500px);
+         -o-transform: rotateY(180deg) translateZ(500px);
+            transform: rotateY(180deg) translateZ(500px);
+}
+.img:nth-child(5) {
+    -webkit-transform: rotateY(240deg) translateZ(500px);
+       -moz-transform: rotateY(240deg) translateZ(500px);
+        -ms-transform: rotateY(240deg) translateZ(500px);
+         -o-transform: rotateY(240deg) translateZ(500px);
+            transform: rotateY(240deg) translateZ(500px);
+}
+.img:nth-child(6) {
+    -webkit-transform: rotateY(300deg) translateZ(500px);
+       -moz-transform: rotateY(300deg) translateZ(500px);
+        -ms-transform: rotateY(300deg) translateZ(500px);
+         -o-transform: rotateY(300deg) translateZ(500px);
+            transform: rotateY(300deg) translateZ(500px);
+}

@@ -1,0 +1,47 @@
+.info-box {
+    background: #3190e8;
+    padding: .666667rem .4rem;
+    color: #fff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.avatar-default {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    height: 1.6rem;
+    background: #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+.user-info {
+    margin-left: .48rem;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.user-info p {
+    font-size: 0.38rem;
+}
+.user-info-login-text {
+    font-size: 0.6rem !important;
+}
+.info-data {
+    height: 2.24rem;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.info-data>a {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+}
